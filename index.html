@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Durketa Logistics | Truck Dispatch Services</title>
+<meta name="description" content="Human dispatch support for American carriers. We find loads, negotiate rates and handle dispatch paperwork.">
+<link rel="icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGAAAABgBAMAAAAQtmoLAAAAElBMVEUAAgIUSDwWTUAMWSURRTkCYWAke6NTAAAABnRSTlMA9v4aXATPuTMfAAAEe0lEQVR42u1YTW/jRBh+ZsbmSyieSVdaCVTiVuVQVRRvu3tCiGwFp4qVxaq/MgL5wJ6gUi4c+IjqZVXEYbdyKqFWoq0nRQiQEw8Hf4zHjpNWuzeYi+3kfeZ9/byfY8BY7MFB9dG2hHjfNiQs48mfhM/ZTD8nhMskMUSIqYE6ULL6N4fzm4GguOX6jwCSNoDN2iC+P89xdoLHpyOAeRVgGgFsJ4AfNBxnJ9ZUtGiIP/umRJQA3zoUgJKEx4QrKZBdlCQciD/8LqkBbPWedGSLBuKgx3MVhb2P7kZq603RO995K2Zr5kV0z/++eJbWTFrDyoi3aFAbJ7gyTfKvwyvaazWJXrpsnFQANt52hJyoFgCfXHXVJwg0gG2PU4p0d74KMnLVWLCPKgBQpzdRUXsA8Z0X7HnV045DJ1c4OJkrvj5InaPUqeY6ExvUXRijG1R4Xhl8CeExlwvkPTXtEx7qaJ0CkH474FgRhaEObwYA/WBBSlgA4JeAGZHF8/xlA0AWTZbtA5gOb5Cctu0DiZUMsnq1bEn8jgEA63EEII2IWgLg4xUXAKyvss0rBdULdTJrIkKoEwCKNox5oOURNIggVuPVfryv97hoUl0AWJ5Q2I9ONCDuD+uG5gAyzQuU/XVHxXq/qHyhInIswgGoCctZ2h8bQX4dVSoSB6CsdQ5gFtIcEHRr2fykoBV0HYCyfgIA4sqi2jgSZT1TEpdbuU0hufgWACzfJGIK4EpqIyoxwCUARk35lAC6nlEAQ9MVs5wlmdM6I0U8AkByfaT9/9T0QzWUkkFxt1cNvpfsQGSZIDcBfLYsvMP5JrEGjkevpotKRmop3yhNNQ3T1j7bQit7JbT6t6U1WE7ry84aw5vRqldf21KnVWGJHxZFa3JbWj1DlbeQVlpl0FAVzh10syjZLW+PAOmGZqk8AIBpWNlzMpnvPdv2S9sJZ+k2DwA77dT09RACtlp1n2bjCe1niJzW5HNzezjHuXKpeFZau1ltJWo7a3r3pDF7k48DALZajXheW/NaXdRW/OxUWjzpFIMY+mEmWfihjNYPrisaUk1RK63PZteeLozD1g6kZTAb6ajyGz3Lkjwb0lL9m3bcKKj3VmWpPYr0JKpG62hutJL0Tx8YWN6XN5sE+FhiADAa3jg5uQdglo0/itdSfl6GSFePP2i2GrPbT8swpCW5C1+DKIJ+fUi02+V9ukGFVzHBFu6e6OvcrPUAWGJFCOPfPUHW7rRreNj9dG3DyGmHUJneadPwMHIOZVytFrZaZZ14wbDeOeV5vmRlPn30g1qTf7VZ9E8ncl8//qVq0pPUedGVQnAQAWSX8o6nbncS7RuNJLVjcrn1jnDO/7h3xjad811xxjbvnm91z9hm97Xv33Dkr7WKZ3WgYugD1oQjzo9ahHP0ho1jWXTKAX0eq1wAdUqT5sHvfvuhafewefCDndjbOHLAejCOls4KfTfwg5YeSIUw1BAhXLNhGI2HeUcOlMtqGmbh/18dbrmsZrrXRj21qAv7XwjBfHO/2seIfwFec5tVTFd16QAAAABJRU5ErkJggg==">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--logo:url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGAAAABgBAMAAAAQtmoLAAAAElBMVEUAAgIUSDwWTUAMWSURRTkCYWAke6NTAAAABnRSTlMA9v4aXATPuTMfAAAEe0lEQVR42u1YTW/jRBh+ZsbmSyieSVdaCVTiVuVQVRRvu3tCiGwFp4qVxaq/MgL5wJ6gUi4c+IjqZVXEYbdyKqFWoq0nRQiQEw8Hf4zHjpNWuzeYi+3kfeZ9/byfY8BY7MFB9dG2hHjfNiQs48mfhM/ZTD8nhMskMUSIqYE6ULL6N4fzm4GguOX6jwCSNoDN2iC+P89xdoLHpyOAeRVgGgFsJ4AfNBxnJ9ZUtGiIP/umRJQA3zoUgJKEx4QrKZBdlCQciD/8LqkBbPWedGSLBuKgx3MVhb2P7kZq603RO995K2Zr5kV0z/++eJbWTFrDyoi3aFAbJ7gyTfKvwyvaazWJXrpsnFQANt52hJyoFgCfXHXVJwg0gG2PU4p0d74KMnLVWLCPKgBQpzdRUXsA8Z0X7HnV045DJ1c4OJkrvj5InaPUqeY6ExvUXRijG1R4Xhl8CeExlwvkPTXtEx7qaJ0CkH474FgRhaEObwYA/WBBSlgA4JeAGZHF8/xlA0AWTZbtA5gOb5Cctu0DiZUMsnq1bEn8jgEA63EEII2IWgLg4xUXAKyvss0rBdULdTJrIkKoEwCKNox5oOURNIggVuPVfryv97hoUl0AWJ5Q2I9ONCDuD+uG5gAyzQuU/XVHxXq/qHyhInIswgGoCctZ2h8bQX4dVSoSB6CsdQ5gFtIcEHRr2fykoBV0HYCyfgIA4sqi2jgSZT1TEpdbuU0hufgWACzfJGIK4EpqIyoxwCUARk35lAC6nlEAQ9MVs5wlmdM6I0U8AkByfaT9/9T0QzWUkkFxt1cNvpfsQGSZIDcBfLYsvMP5JrEGjkevpotKRmop3yhNNQ3T1j7bQit7JbT6t6U1WE7ry84aw5vRqldf21KnVWGJHxZFa3JbWj1DlbeQVlpl0FAVzh10syjZLW+PAOmGZqk8AIBpWNlzMpnvPdv2S9sJZ+k2DwA77dT09RACtlp1n2bjCe1niJzW5HNzezjHuXKpeFZau1ltJWo7a3r3pDF7k48DALZajXheW/NaXdRW/OxUWjzpFIMY+mEmWfihjNYPrisaUk1RK63PZteeLozD1g6kZTAb6ajyGz3Lkjwb0lL9m3bcKKj3VmWpPYr0JKpG62hutJL0Tx8YWN6XN5sE+FhiADAa3jg5uQdglo0/itdSfl6GSFePP2i2GrPbT8swpCW5C1+DKIJ+fUi02+V9ukGFVzHBFu6e6OvcrPUAWGJFCOPfPUHW7rRreNj9dG3DyGmHUJneadPwMHIOZVytFrZaZZ14wbDeOeV5vmRlPn30g1qTf7VZ9E8ncl8//qVq0pPUedGVQnAQAWSX8o6nbncS7RuNJLVjcrn1jnDO/7h3xjad811xxjbvnm91z9hm97Xv33Dkr7WKZ3WgYugD1oQjzo9ahHP0ho1jWXTKAX0eq1wAdUqT5sHvfvuhafewefCDndjbOHLAejCOls4KfTfwg5YeSIUw1BAhXLNhGI2HeUcOlMtqGmbh/18dbrmsZrrXRj21qAv7XwjBfHO/2seIfwFec5tVTFd16QAAAABJRU5ErkJggg==");--n:#0b1220;--n2:#111b30;--o:#f26a1b;--od:#d65a10;--bg:#f5f6f8;--ink:#101828;--mu:#5b6578;--ln:#e3e7ee;--w:#fff}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{font:16px/1.65 'Plus Jakarta Sans',system-ui,sans-serif;color:var(--ink);background:var(--bg)}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--o);outline-offset:3px}
+.w{max-width:1160px;margin:0 auto;padding:0 22px}
+.i{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;flex:none}
+section{padding:84px 0}
+.eb{color:var(--o);font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;margin-bottom:12px}
+h2{font-size:clamp(28px,4vw,42px);font-weight:800;line-height:1.15;letter-spacing:-.02em;margin-bottom:14px}
+h3{font-weight:700;line-height:1.3}
+.lead{color:var(--mu);max-width:620px;margin-bottom:38px}
+.btn{display:inline-flex;align-items:center;gap:8px;background:var(--o);color:var(--w);text-decoration:none;font:700 13px 'Plus Jakarta Sans',sans-serif;letter-spacing:.06em;text-transform:uppercase;padding:15px 26px;border-radius:6px;border:0;cursor:pointer}
+.btn:hover{background:var(--od)}
+.btn .i{width:16px;height:16px}
+.btn.out{background:transparent;border:1.5px solid rgba(255,255,255,.35)}
+.btn.out:hover{background:rgba(255,255,255,.1)}
+.dk{background:var(--n);color:var(--w)}
+.dk .lead{color:#aab4c6}
+.lg{display:block;flex:none;width:40px;height:40px;border-radius:8px;background:var(--logo) center/78% no-repeat,#fff}
+
+/* nav */
+.top{background:var(--n);position:sticky;top:0;z-index:20;border-bottom:1px solid rgba(255,255,255,.08)}
+.nav{display:flex;align-items:center;gap:28px;height:68px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--w);margin-right:auto;line-height:1.15}
+.brand b{display:block;font-size:15px}
+.brand small{font-size:11px;color:#8d99ad}
+.nav ul{display:flex;gap:26px;list-style:none}
+.nav ul a{color:#c7cfdc;text-decoration:none;font-size:13.5px;font-weight:500}
+.nav ul a:hover{color:var(--w)}
+.nav .btn{padding:11px 18px;font-size:12px}
+
+/* hero */
+.hero{background:linear-gradient(90deg,rgba(11,18,32,.96) 35%,rgba(11,18,32,.55)),url(hero.jpg) center/cover,radial-gradient(60% 80% at 85% 40%,#24344f,var(--n));color:var(--w);padding:96px 0 0;position:relative}
+.hg{display:grid;grid-template-columns:1.25fr .75fr;gap:40px;align-items:end;padding-bottom:150px}
+.badge{display:inline-block;border:1px solid rgba(242,106,27,.5);background:rgba(242,106,27,.1);color:var(--o);font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:7px 14px;border-radius:99px;margin-bottom:24px}
+.hero h1{font-size:clamp(44px,7.5vw,84px);font-weight:800;line-height:1.02;letter-spacing:-.03em;margin-bottom:22px}
+.hero h1 em{font-style:normal;color:var(--o);display:block}
+.hero p{color:#b9c3d4;max-width:540px;margin-bottom:30px}
+.btns{display:flex;gap:12px;flex-wrap:wrap}
+.chips{display:flex;gap:10px 26px;flex-wrap:wrap;margin-top:34px;list-style:none;font-size:12.5px;color:#c7cfdc}
+.chips li{display:flex;align-items:center;gap:7px}
+.chips .i{width:15px;height:15px;color:var(--o)}
+.pc{background:rgba(11,18,32,.8);border:1px solid rgba(255,255,255,.14);border-radius:12px;padding:22px 24px;max-width:290px;justify-self:end}
+.pc b{display:block;font-size:46px;font-weight:800;color:var(--o);line-height:1}
+.pc span{display:block;font-weight:700;margin:6px 0}
+.pc p{font-size:13px;margin:0;color:#aab4c6}
+.feat{position:absolute;left:50%;transform:translateX(-50%);bottom:-60px;width:min(1116px,calc(100% - 44px));background:var(--w);color:var(--ink);border-radius:12px;display:grid;grid-template-columns:repeat(4,1fr);box-shadow:0 20px 50px rgba(11,18,32,.22)}
+.feat div{padding:24px;border-right:1px solid var(--ln)}
+.feat div:last-child{border:0}
+.feat .i{color:var(--o);margin-bottom:12px}
+.feat h3{font-size:16px;margin-bottom:6px}
+.feat p{font-size:13.5px;color:var(--mu);line-height:1.5;margin:0}
+.after{padding-top:150px}
+
+/* reality */
+.rg{display:grid;grid-template-columns:1fr 1.05fr .85fr;gap:36px;align-items:center}
+.rg h2{font-size:clamp(30px,4vw,44px)}
+.pain{display:grid;grid-template-columns:1fr 1fr;gap:12px;list-style:none}
+.pain li{background:var(--w);border:1px solid var(--ln);border-radius:10px;padding:14px;font-size:13.5px;font-weight:500;display:grid;gap:8px;line-height:1.35}
+.pain .i{color:var(--o);width:20px;height:20px}
+.call{background:var(--n);color:var(--w);border-radius:14px;padding:30px;box-shadow:0 18px 40px rgba(11,18,32,.2)}
+.call .ic{width:42px;height:42px;background:var(--o);border-radius:9px;display:grid;place-items:center;margin-bottom:16px}
+.call h3{font-size:24px;margin-bottom:10px}
+.call p{color:#aab4c6;font-size:14.5px;margin-bottom:18px}
+.call a.l{color:var(--o);font-weight:700;font-size:14px;text-decoration:none}
+
+/* cards */
+.g{display:grid;gap:18px}
+.g4{grid-template-columns:repeat(4,1fr)}
+.g3{grid-template-columns:repeat(3,1fr)}
+.card{background:var(--w);border:1px solid var(--ln);border-radius:12px;padding:24px}
+.card .i{color:var(--o);margin-bottom:14px}
+.card h3{font-size:16.5px;margin-bottom:6px}
+.card p{font-size:14px;color:var(--mu);line-height:1.55}
+.sm .card{padding:20px}
+.sm .card h3{font-size:16px}
+
+/* process */
+.pr{background:linear-gradient(var(--n),#0e1729)}
+.stp{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.stp div{background:var(--n2);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:26px}
+.stp b{display:block;font-size:38px;font-weight:800;color:var(--o);line-height:1;margin-bottom:16px}
+.stp h3{font-size:17px;margin-bottom:6px}
+.stp p{font-size:14px;color:#aab4c6;line-height:1.55}
+
+/* why */
+.wh{display:grid;grid-template-columns:repeat(3,1fr);gap:26px 34px}
+.wh div{display:flex;gap:14px}
+.wh .ib{width:42px;height:42px;border-radius:10px;background:var(--n);color:var(--o);display:grid;place-items:center;flex:none}
+.wh h3{font-size:16px;margin-bottom:4px}
+.wh p{font-size:14px;color:var(--mu);line-height:1.55}
+
+/* pricing */
+.prc{text-align:center}
+.prc .lead{margin-inline:auto}
+.pb{max-width:900px;margin:0 auto;background:linear-gradient(135deg,var(--n),#16223b);color:var(--w);border-radius:16px;padding:44px;display:grid;grid-template-columns:auto 1fr;gap:44px;align-items:center;text-align:left;box-shadow:0 24px 60px rgba(11,18,32,.25)}
+.pb small{color:var(--o);font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase}
+.pb .big{font-size:84px;font-weight:800;line-height:1;margin:6px 0}
+.pb .big+span{display:block;font-weight:700}
+.pb p{font-size:13px;color:#aab4c6;margin:6px 0 20px}
+.pb ul{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:10px 22px;font-size:14px;color:#d6dce8;margin-bottom:24px}
+.pb li{display:flex;gap:8px;align-items:center}
+.pb li .i{width:16px;height:16px;color:var(--o)}
+
+/* cta */
+.cta{text-align:center;background:radial-gradient(60% 120% at 50% 0,#1c2b47,var(--n))}
+.cta .lead{margin:0 auto 28px}
+.cta .btns{justify-content:center}
+
+/* contact */
+.cg{display:grid;grid-template-columns:.8fr 1.2fr;gap:50px;align-items:start}
+.ct{display:flex;gap:14px;align-items:center;background:var(--w);border:1px solid var(--ln);border-radius:10px;padding:14px 16px;margin-bottom:12px;text-decoration:none;font-weight:600;font-size:15px}
+.ct .i{color:var(--o)}
+.note{font-size:13px;color:var(--mu);margin-top:14px}
+form{background:var(--w);border:1px solid var(--ln);border-radius:14px;padding:30px;display:grid;gap:15px;box-shadow:0 14px 40px rgba(16,24,40,.07)}
+form h3{font-size:20px}
+form>p.s{font-size:13.5px;color:var(--mu);margin-top:-8px}
+label{display:grid;gap:6px;font-size:13px;font-weight:700}
+input,select,textarea{font:inherit;font-weight:400;font-size:15px;padding:12px 13px;border:1px solid #cbd2de;border-radius:8px;width:100%;background:#fafbfc}
+textarea{min-height:110px;resize:vertical}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:15px}
+form .btn{justify-content:center;width:100%}
+#st{font-weight:600;min-height:1.3em;font-size:14px}
+.hp{position:absolute;left:-9999px}
+.fine{font-size:12px;color:var(--mu);text-align:center}
+
+/* faq */
+.fq{display:grid;grid-template-columns:.8fr 1.2fr;gap:50px}
+details{background:var(--w);border:1px solid var(--ln);border-radius:10px;margin-bottom:10px}
+summary{cursor:pointer;list-style:none;padding:17px 20px;font-weight:700;font-size:15px;display:flex;justify-content:space-between;gap:14px}
+summary::after{content:"\002B";color:var(--o);font-size:22px;line-height:1}
+details[open] summary::after{content:"\2212"}
+details p{padding:0 20px 18px;color:var(--mu);font-size:14.5px}
+
+footer{background:var(--n);color:#9aa5b8;padding:54px 0 24px;font-size:14px}
+.fg{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:36px;margin-bottom:32px}
+footer h4{color:var(--w);font-size:12px;letter-spacing:.12em;text-transform:uppercase;margin-bottom:14px}
+footer a{display:block;text-decoration:none;margin-bottom:8px}
+footer a:hover{color:var(--o)}
+.fb{display:flex;align-items:center;gap:10px;color:var(--w);font-weight:700;margin-bottom:12px}
+.cp{border-top:1px solid rgba(255,255,255,.1);padding-top:20px;font-size:13px}
+
+@media(max-width:940px){
+ .nav ul{display:none}
+ .hg,.rg,.cg,.fq,.fg,.pb{grid-template-columns:1fr}
+ .pc{justify-self:start}
+ .hg{padding-bottom:40px}
+ .feat{position:static;transform:none;width:100%;grid-template-columns:1fr 1fr;margin-top:10px;border-radius:12px 12px 0 0}
+ .after{padding-top:70px}
+ .g4,.stp{grid-template-columns:1fr 1fr}
+ .g3,.wh{grid-template-columns:1fr 1fr}
+ section{padding:62px 0}
+}
+@media(max-width:560px){
+ .feat,.g4,.g3,.stp,.wh,.pain,.row,.pb ul{grid-template-columns:1fr}
+ .feat div{border-right:0;border-bottom:1px solid var(--ln)}
+ .nav .btn{display:none}
+ .nav{height:62px}
+}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+<symbol id="user" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></symbol>
+<symbol id="search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.3-4.3"/></symbol>
+<symbol id="dollar" viewBox="0 0 24 24"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></symbol>
+<symbol id="file" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M8 13h8M8 17h8"/></symbol>
+<symbol id="chat" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></symbol>
+<symbol id="truck" viewBox="0 0 24 24"><path d="M1 3h15v13H1zM16 8h4l3 3v5h-7"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></symbol>
+<symbol id="clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></symbol>
+<symbol id="shield" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></symbol>
+<symbol id="check" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></symbol>
+<symbol id="phone" viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></symbol>
+<symbol id="mail" viewBox="0 0 24 24"><path d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"/><path d="M22 6l-10 7L2 6"/></symbol>
+<symbol id="arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+<symbol id="pkg" viewBox="0 0 24 24"><path d="M21 8l-9-5-9 5v8l9 5 9-5z"/><path d="M3 8l9 5 9-5M12 13v8"/></symbol>
+<symbol id="wa" viewBox="0 0 24 24"><path d="M3 21l1.7-5A9 9 0 1 1 8 19.3z"/></symbol>
+</svg>
+
+<div class="top"><div class="w nav">
+ <a class="brand" href="#top"><i class="lg" role="img" aria-label="Durketa Logistics logo"></i><span><b>Durketa Logistics</b><small>dispatching services</small></span></a>
+ <ul>
+  <li><a href="#services">Services</a></li>
+  <li><a href="#trucks">Truck Types</a></li>
+  <li><a href="#how">How It Works</a></li>
+  <li><a href="#why">Why Durketa</a></li>
+  <li><a href="#faq">FAQ</a></li>
+  <li><a href="#contact">Contact</a></li>
+ </ul>
+ <a class="btn" href="#contact">Get Started <svg class="i"><use href="#arrow"/></svg></a>
+</div></div>
+
+<header class="hero" id="top">
+ <div class="w hg">
+  <div>
+   <span class="badge">Human dispatch support for American carriers</span>
+   <h1>You Drive. <em>We Handle the Dispatch.</em></h1>
+   <p>We help carriers find better freight, negotiate rates, handle broker communication and manage dispatch paperwork, so you can spend more time on the road and less time behind a desk.</p>
+   <div class="btns">
+    <a class="btn" href="#contact">Get Started <svg class="i"><use href="#arrow"/></svg></a>
+    <a class="btn out" href="tel:+18052519070"><svg class="i"><use href="#phone"/></svg> Talk to a Dispatcher</a>
+   </div>
+   <ul class="chips">
+    <li><svg class="i"><use href="#check"/></svg>Dedicated dispatch support</li>
+    <li><svg class="i"><use href="#check"/></svg>No forced loads</li>
+    <li><svg class="i"><use href="#check"/></svg>Rate negotiation</li>
+    <li><svg class="i"><use href="#check"/></svg>Carrier-focused service</li>
+   </ul>
+  </div>
+  <div class="pc"><b>5%</b><span>Simple dispatch pricing per load</span><p>No setup fee. No hidden charges.</p></div>
+ </div>
+ <div class="feat">
+  <div><svg class="i"><use href="#user"/></svg><h3>Dedicated Dispatcher</h3><p>A real dispatcher who understands your equipment, lanes and preferences.</p></div>
+  <div><svg class="i"><use href="#search"/></svg><h3>Better Load Opportunities</h3><p>We search for freight that fits your truck, your business and your goals.</p></div>
+  <div><svg class="i"><use href="#dollar"/></svg><h3>Rate Negotiation</h3><p>We communicate with brokers and negotiate rates on your behalf.</p></div>
+  <div><svg class="i"><use href="#file"/></svg><h3>Less Paperwork</h3><p>We help manage rate confirmations, BOL/POD documentation and more.</p></div>
+ </div>
+</header>
+
+<main>
+<section class="after"><div class="w rg">
+ <div>
+  <p class="eb">The dispatch reality</p>
+  <h2>Running a Truck Is Already a Full-Time Job.</h2>
+  <p class="lead" style="margin:0">You should not have to spend your day searching load boards, calling brokers, negotiating rates and chasing paperwork.</p>
+ </div>
+ <ul class="pain">
+  <li><svg class="i"><use href="#search"/></svg>Hours spent searching for loads</li>
+  <li><svg class="i"><use href="#phone"/></svg>Constant broker calls</li>
+  <li><svg class="i"><use href="#dollar"/></svg>Low-rate offers</li>
+  <li><svg class="i"><use href="#truck"/></svg>Empty or deadhead miles</li>
+  <li><svg class="i"><use href="#file"/></svg>Carrier setup paperwork</li>
+  <li><svg class="i"><use href="#check"/></svg>Rate confirmations</li>
+  <li><svg class="i"><use href="#clock"/></svg>Detention and layover issues</li>
+  <li><svg class="i"><use href="#dollar"/></svg>Invoicing and follow-up</li>
+ </ul>
+ <div class="call">
+  <div class="ic"><svg class="i" style="margin:0"><use href="#truck"/></svg></div>
+  <h3>That's where Durketa comes in.</h3>
+  <p>We handle the dispatch side so you can focus on driving, delivering and running your business.</p>
+  <a class="l" href="#contact">Let's talk about your truck &rarr;</a>
+ </div>
+</div></section>
+
+<section id="services" style="background:var(--w);border-block:1px solid var(--ln)"><div class="w">
+ <p class="eb">What we handle</p>
+ <h2>Everything You Need From a Dispatch Partner</h2>
+ <p class="lead">From the first broker call to the final paperwork, Durketa focuses on the work that keeps your truck moving.</p>
+ <div class="g g4">
+  <div class="card"><svg class="i"><use href="#search"/></svg><h3>Load Finding &amp; Booking</h3><p>We search for freight that matches your equipment, preferred lanes, schedule and business goals.</p></div>
+  <div class="card"><svg class="i"><use href="#dollar"/></svg><h3>Rate Negotiation</h3><p>We negotiate with brokers on your behalf with the goal of securing strong, workable rates.</p></div>
+  <div class="card"><svg class="i"><use href="#chat"/></svg><h3>Broker Communication</h3><p>We handle calls, emails, confirmations and follow-ups so you can stay focused on the road.</p></div>
+  <div class="card"><svg class="i"><use href="#shield"/></svg><h3>Carrier Setup</h3><p>We assist with broker setup packets and the documents brokers require from carriers.</p></div>
+  <div class="card"><svg class="i"><use href="#file"/></svg><h3>Rate Confirmation &amp; Paperwork</h3><p>We review rate confirmations and help keep BOLs, PODs and load documents organized.</p></div>
+  <div class="card"><svg class="i"><use href="#clock"/></svg><h3>Detention, Layover &amp; TONU</h3><p>We follow up with brokers on detention, layover and TONU situations when they apply.</p></div>
+  <div class="card"><svg class="i"><use href="#dollar"/></svg><h3>Invoice Support</h3><p>We help send invoices on time and follow up so your payments keep moving.</p></div>
+  <div class="card"><svg class="i"><use href="#user"/></svg><h3>Ongoing Dispatch Support</h3><p>Your dispatcher stays available to coordinate changes until the load is delivered.</p></div>
+ </div>
+</div></section>
+
+<section id="trucks"><div class="w">
+ <p class="eb">Built around your equipment</p>
+ <h2>Dispatching for Different Types of Equipment</h2>
+ <p class="lead">Whether you operate one truck or manage a small fleet, we can help coordinate freight around your equipment. Availability can vary, so tell us what you operate.</p>
+ <div class="g g4 sm">
+  <div class="card"><svg class="i"><use href="#truck"/></svg><h3>Dry Van</h3><p>Reliable freight for dry van carriers.</p></div>
+  <div class="card"><svg class="i"><use href="#truck"/></svg><h3>Reefer</h3><p>Temperature-controlled freight with appointment coordination.</p></div>
+  <div class="card"><svg class="i"><use href="#truck"/></svg><h3>Flatbed</h3><p>Flatbed freight with attention to load requirements and scheduling.</p></div>
+  <div class="card"><svg class="i"><use href="#truck"/></svg><h3>Step Deck</h3><p>Dispatch support for step deck equipment and specialized freight.</p></div>
+  <div class="card"><svg class="i"><use href="#truck"/></svg><h3>Power Only</h3><p>Loads for carriers pulling trailers they do not own.</p></div>
+  <div class="card"><svg class="i"><use href="#pkg"/></svg><h3>Box Truck</h3><p>Freight opportunities for box truck operators.</p></div>
+  <div class="card"><svg class="i"><use href="#clock"/></svg><h3>Hot Shot</h3><p>Dispatch support for hotshot carriers.</p></div>
+  <div class="card"><svg class="i"><use href="#pkg"/></svg><h3>Sprinter Van</h3><p>Freight coordination for sprinter vans.</p></div>
+ </div>
+</div></section>
+
+<section class="pr dk" id="how"><div class="w">
+ <p class="eb">The simple process</p>
+ <h2>Simple. Straightforward. Carrier-Focused.</h2>
+ <p class="lead">You stay in control of the load decisions. We keep the moving parts organized.</p>
+ <div class="stp">
+  <div><b>01</b><h3>Tell Us About Your Truck</h3><p>Share your equipment, preferred lanes, schedule and information.</p></div>
+  <div><b>02</b><h3>We Search &amp; Negotiate</h3><p>Your dispatcher searches for suitable loads and talks with brokers to negotiate the rate.</p></div>
+  <div><b>03</b><h3>You Approve the Load</h3><p>We present the load details to you. You make the final decision before booking.</p></div>
+  <div><b>04</b><h3>You Drive. We Handle the Details.</h3><p>You focus on pickup and delivery while we handle communication, paperwork and dispatch coordination.</p></div>
+ </div>
+</div></section>
+
+<section id="why"><div class="w">
+ <p class="eb">Why carriers choose us</p>
+ <h2>More Than Finding a Load</h2>
+ <p class="lead">Your dispatcher should be an extension of your trucking business, not just someone sending random loads.</p>
+ <div class="wh">
+  <div><span class="ib"><svg class="i"><use href="#truck"/></svg></span><span><h3>Carrier-Focused</h3><p>Your priority is helping you operate your truck efficiently.</p></span></div>
+  <div><span class="ib"><svg class="i"><use href="#user"/></svg></span><span><h3>Dedicated Support</h3><p>Clear communication and a consistent point of contact.</p></span></div>
+  <div><span class="ib"><svg class="i"><use href="#shield"/></svg></span><span><h3>No Forced Dispatching</h3><p>You have the final say on the loads you accept.</p></span></div>
+  <div><span class="ib"><svg class="i"><use href="#dollar"/></svg></span><span><h3>Rate Negotiation</h3><p>We communicate with brokers and negotiate on your behalf.</p></span></div>
+  <div><span class="ib"><svg class="i"><use href="#file"/></svg></span><span><h3>Less Administrative Work</h3><p>We take dispatch paperwork and broker follow-up off your plate.</p></span></div>
+  <div><span class="ib"><svg class="i"><use href="#check"/></svg></span><span><h3>Long-Term Relationships</h3><p>We focus on reliable, sustainable working relationships with carriers.</p></span></div>
+ </div>
+</div></section>
+
+<section class="prc" style="background:var(--w);border-block:1px solid var(--ln)"><div class="w">
+ <p class="eb">Clear and simple</p>
+ <h2>Simple Dispatch Pricing</h2>
+ <p class="lead">One straightforward fee for dispatch support, built around your truck business.</p>
+ <div class="pb">
+  <div><small>Standard dispatch fee</small><div class="big">5%</div><span>Dispatch fee per load</span><p>No setup fee. No hidden charges.</p><a class="btn" href="#contact">Get Started <svg class="i"><use href="#arrow"/></svg></a></div>
+  <ul>
+   <li><svg class="i"><use href="#check"/></svg>Dedicated dispatch support</li>
+   <li><svg class="i"><use href="#check"/></svg>Load search &amp; booking</li>
+   <li><svg class="i"><use href="#check"/></svg>Rate negotiation</li>
+   <li><svg class="i"><use href="#check"/></svg>Dispatch paperwork assistance</li>
+   <li><svg class="i"><use href="#check"/></svg>Detention / layover / TONU help</li>
+   <li><svg class="i"><use href="#check"/></svg>Ongoing support</li>
+  </ul>
+ </div>
+</div></section>
+
+<section class="cta dk"><div class="w">
+ <h2>Ready to Spend Less Time Chasing Loads?</h2>
+ <p class="lead">Let Durketa handle the dispatch work while you focus on keeping your truck moving.</p>
+ <div class="btns">
+  <a class="btn" href="#contact">Get Started <svg class="i"><use href="#arrow"/></svg></a>
+  <a class="btn out" href="tel:+18052519070"><svg class="i"><use href="#phone"/></svg> Call Us</a>
+ </div>
+</div></section>
+
+<section id="contact"><div class="w cg">
+ <div>
+  <p class="eb">Start the conversation</p>
+  <h2>Let's Get Your Truck Moving</h2>
+  <p class="lead" style="margin-bottom:24px">Tell us a little about your operation. A Durketa dispatcher will review your details and follow up with next steps.</p>
+  <a class="ct" href="mailto:info@durketalogistics.com"><svg class="i"><use href="#mail"/></svg>info@durketalogistics.com</a>
+  <a class="ct" href="tel:+18052519070"><svg class="i"><use href="#phone"/></svg>Call or text: +1 (805) 251-9070</a>
+  <a class="ct" href="https://wa.me/18085828949"><svg class="i"><use href="#wa"/></svg>WhatsApp: +1 (808) 582-8949</a>
+  <p class="note">Your information is used to understand your dispatch needs and follow up with you directly.</p>
+ </div>
+ <form id="f" action="https://api.web3forms.com/submit" method="POST">
+  <input type="hidden" name="access_key" value="PASTE_WEB3FORMS_KEY_HERE">
+  <input type="hidden" name="subject" value="New carrier inquiry - Durketa Logistics">
+  <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off">
+  <h3>Tell us about your operation</h3>
+  <p class="s">All fields help us give a more useful response.</p>
+  <div class="row"><label>Full Name<input name="name" placeholder="Your full name" required autocomplete="name"></label><label>Company Name<input name="company" placeholder="Your company name" autocomplete="organization"></label></div>
+  <div class="row"><label>Phone Number<input name="phone" type="tel" placeholder="(000) 000-0000" required autocomplete="tel"></label><label>Email Address<input name="email" type="email" placeholder="you@example.com" required autocomplete="email"></label></div>
+  <div class="row"><label>MC Number<input name="mc" placeholder="MC-0000000"></label><label>DOT Number<input name="dot" placeholder="DOT-0000000"></label></div>
+  <div class="row">
+   <label>Truck / Equipment Type<select name="equipment"><option value="">Select type</option><option>Dry Van</option><option>Reefer</option><option>Flatbed</option><option>Step Deck</option><option>Power Only</option><option>Box Truck</option><option>Hot Shot</option><option>Sprinter Van</option><option>Other</option></select></label>
+   <label>Number of Trucks<select name="trucks"><option value="">Select count</option><option>1</option><option>2-5</option><option>6-10</option><option>10+</option></select></label>
+  </div>
+  <label>Preferred Lanes<input name="lanes" placeholder="Example: California to Texas"></label>
+  <label>Message<textarea name="message" placeholder="Tell us anything else about your operation"></textarea></label>
+  <button class="btn" type="submit">Submit Request <svg class="i"><use href="#arrow"/></svg></button>
+  <p id="st" role="status"></p>
+  <p class="fine">By submitting, you agree to be contacted about dispatch services.</p>
+ </form>
+</div></section>
+
+<section id="faq" style="background:var(--w);border-top:1px solid var(--ln)"><div class="w fq">
+ <div>
+  <p class="eb">Questions answered</p>
+  <h2>Frequently Asked Questions</h2>
+  <p class="lead">A straightforward look at how we work with owner-operators and small fleets.</p>
+ </div>
+ <div>
+  <details open><summary>What does a dispatcher do?</summary><p>A dispatcher finds loads, negotiates rates with brokers, handles communication and manages the paperwork so the driver can focus on driving.</p></details>
+  <details><summary>Do carriers have to take every load you find?</summary><p>No. You approve every load before we book it.</p></details>
+  <details><summary>How much do you charge?</summary><p>Our fee is 5% of the load rate. There is no setup fee and no hidden charges.</p></details>
+  <details><summary>What truck types do you dispatch?</summary><p>Dry van, reefer, flatbed, step deck, power only, box truck, hot shot and sprinter van. Availability can vary, so tell us what you run.</p></details>
+  <details><summary>Do you handle paperwork?</summary><p>Yes. We help with rate confirmations, BOLs, broker setup packets and invoicing support.</p></details>
+  <details><summary>Do you help with detention and TONU?</summary><p>Yes. We follow up with brokers on detention, layover and TONU situations when they apply.</p></details>
+  <details><summary>Can I choose my own loads?</summary><p>Yes. You have the final say on every load.</p></details>
+  <details><summary>Do you work with small fleets?</summary><p>Yes. We work with owner-operators and small fleets.</p></details>
+ </div>
+</div></section>
+</main>
+
+<footer><div class="w">
+ <div class="fg">
+  <div><div class="fb"><i class="lg" role="img" aria-label="Durketa Logistics logo"></i>Durketa Logistics</div><p>You Drive. We Handle the Dispatch.</p><p style="margin-top:12px">info@durketalogistics.com<br>+1 (805) 251-9070</p></div>
+  <div><h4>Quick Links</h4><a href="#top">Home</a><a href="#services">Services</a><a href="#trucks">Truck Types</a><a href="#how">How It Works</a><a href="#faq">FAQ</a><a href="#contact">Contact</a></div>
+  <div><h4>Get in touch</h4><a href="mailto:info@durketalogistics.com">Email us</a><a href="tel:+18052519070">Call</a><a href="sms:+18052519070">Text</a><a href="https://wa.me/18085828949">WhatsApp</a></div>
+ </div>
+ <div class="cp">&copy; <span id="y"></span> Durketa Logistics. All rights reserved.</div>
+</div></footer>
+
+<script>
+document.getElementById('y').textContent=new Date().getFullYear();
+var f=document.getElementById('f'),s=document.getElementById('st');
+f.addEventListener('submit',function(e){
+ e.preventDefault();s.textContent='Sending...';
+ fetch(f.action,{method:'POST',body:new FormData(f)}).then(function(r){return r.json()}).then(function(d){
+  if(d.success){s.textContent='Thank you. We will contact you shortly.';f.reset()}
+  else{s.textContent='Could not send. Please call or text +1 805 251 9070.'}
+ }).catch(function(){s.textContent='Could not send. Please call or text +1 805 251 9070.'});
+});
+</script>
+</body>
+</html>
